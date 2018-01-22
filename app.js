@@ -9,7 +9,7 @@ var mongoose = require('mongoose');
 var appRoutes = require('./routes/app');
 
 var app = express();
-mongoose.connect('localhost:27017/coffeeLabDB');
+mongoose.connect('mongodb://localhost/coffeeLab');
 
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
