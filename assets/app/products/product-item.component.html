@@ -1,0 +1,31 @@
+<div class="flex-container" [class.selected] = "selected">
+    <p class = "product-name">{{name}}</p>
+    <div class = "product-item">
+        <img src = "https://vignette.wikia.nocookie.net/wingsoffire/images/e/e9/Coffee.png/revision/latest?cb=20150921221434">
+        <div>
+            <p *ngFor = "let ingredient of ingeredients">{{ingredient}}</p>
+        </div>
+    </div>
+    <div>
+        <div *ngFor = "let price of prices">
+            <div class = "product-prices">
+                <p [class.green] = "numberInput.value" >{{price.size|uppercase}} - {{price.price}} UAH </p>
+                <div>
+                    <input 
+                        type="number"  
+                        class= "form-control form-control-sm" 
+                        min = "1" 
+                        (input)="input(numberInput.value, price.size, name)" 
+                        #numberInput
+                    >
+                    <span 
+                        class="oi oi-circle-x" 
+                        aria-hidden="true" 
+                        *ngIf = "numberInput.value" 
+                        (click)="click(numberInput,price.size, name)"
+                    ></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
