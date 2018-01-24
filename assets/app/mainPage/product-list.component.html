@@ -1,0 +1,12 @@
+<div *ngIf = "products">
+    <div class = "flex-container">
+        <product-item *ngFor = "let product of products" [product] = "product"></product-item>
+    </div>
+    <div class = "control">
+        <span class="oi oi-chevron-left"></span>
+        <button class="btn btn-success submit" (click)="submit()">Submit</button>
+        <span class="oi oi-chevron-right"></span>
+    </div>
+</div>
+
+

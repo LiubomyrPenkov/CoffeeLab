@@ -7,9 +7,13 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var appRoutes = require('./routes/app');
+var productsRoutes = require('./routes/products');
 
 var app = express();
-mongoose.connect('mongodb://localhost/coffeeLab');
+mongoose.connect('mongodb://liubomyr:liubomyr@ds213688.mlab.com:13688/coffeelab',function(error){
+    console.log(error.message);
+});
+//mongoose.connect('mongodb://localhost/coffeeLab');
 
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -26,7 +30,12 @@ app.use(function (req, res, next) {
     next();
 });
 
+
+
+app.use('/product', productsRoutes);
 app.use('/', appRoutes);
+
+
 
 
 // catch 404 and forward to error handler

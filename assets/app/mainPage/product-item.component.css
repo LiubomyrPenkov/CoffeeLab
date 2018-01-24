@@ -4,10 +4,7 @@
     padding: 10px;
     cursor: pointer;
     margin-bottom: 5px;
-    width: 300px;
-}
-.flex-container:hover{
-    background: #efefef;
+    width: 320px;
 }
 .selected{
     background: #efefef;
@@ -44,7 +41,6 @@
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 
 input[type="number"]{
     max-width: 70px;
