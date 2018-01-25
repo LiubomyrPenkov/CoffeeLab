@@ -1,8 +1,16 @@
 .flex-container{
-    margin-top: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.flex-list-container{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    height: 85%;
+    overflow: auto;
+    align-content: space-around;
 }
 .submit{
     width: 100px;
@@ -11,8 +19,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    height: 10%;
 }
 .control span{
     cursor: pointer;

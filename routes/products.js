@@ -6,13 +6,11 @@ const Product = require('../models/product');
 router.get('/', (req, res, next)=>{
     Product.find((error, data)=>{
         if(error){
-            res.status(400).json({
+            res.status(500).json({
                 'message': error.message
             })
         }else{
-            res.status(200).json({
-                'data': data
-            })
+            res.status(200).json(data)
         }
     })
 })

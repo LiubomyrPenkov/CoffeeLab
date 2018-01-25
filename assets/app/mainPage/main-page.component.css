@@ -1,0 +1,18 @@
+.main-page-container{
+    height: 90%;
+}
+.filter{
+    background: rgb(167, 173, 105);
+    padding: 50px; 
+    font-size: 25px; 
+    text-align: center;
+}
+.product-list{
+    height: 100%;
+}
+.queue{
+    background: rgb(172, 124, 103); 
+    padding: 50px; 
+    font-size: 25px; 
+    text-align: center;
+}

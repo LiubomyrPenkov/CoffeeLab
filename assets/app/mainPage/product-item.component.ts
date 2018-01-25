@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { OrderService } from "./order.service";
+import { OnInit } from "@angular/core";
 
 
 @Component({
@@ -7,7 +8,7 @@ import { OrderService } from "./order.service";
     templateUrl: './product-item.component.html',
     styleUrls: ['./product-item.component.css']
 })
-export class ProductItem{
+export class ProductItem implements OnInit{
     selected:Boolean = false;
     name:String;
 
@@ -19,6 +20,9 @@ export class ProductItem{
         this.name = this.product['name'];
     }
     input(input, size){
+        if(input.value == 0){
+            this.click(input, size);
+        }
         if(!input.value){
             this.click(input, size);
         }else{

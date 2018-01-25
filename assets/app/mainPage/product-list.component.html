@@ -1,5 +1,5 @@
-<div *ngIf = "products">
-    <div class = "flex-container">
+<div *ngIf = "products" class = "flex-container">
+    <div class = "flex-list-container">
         <product-item *ngFor = "let product of products" [product] = "product"></product-item>
     </div>
     <div class = "control">

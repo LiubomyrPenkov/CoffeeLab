@@ -1,12 +1,14 @@
-<div class="flex-container" >
-    <p class = "product-name" [class.selected] = "selected" >{{product.name}}</p>
-    <div class = "product-item">
-        <img src = "https://vignette.wikia.nocookie.net/wingsoffire/images/e/e9/Coffee.png/revision/latest?cb=20150921221434">
-        <div>
-            <p *ngFor = "let ingredient of product.ingredients">{{ingredient}}</p>
+<div class="flex-container">
+    <div class = "picture">
+        <p class = "product-name" [class.selected] = "selected" >{{product.name}}</p>
+        <div class = "product-item">
+            <img src="https://vignette.wikia.nocookie.net/wingsoffire/images/e/e9/Coffee.png/revision/latest?cb=20150921221434">
+            <div>
+                <p *ngFor = "let ingredient of product.ingredients">{{ingredient}}</p>
+            </div>
         </div>
     </div>
-    <div>
+    <div class = "form">
         <div *ngFor = "let price of product.prices">
             <div class = "product-prices">
                 <p [class.green] = "numberInput.value" >{{price.size|uppercase}} - {{price.price}} UAH </p>
@@ -14,17 +16,17 @@
                     <input 
                         type="number"  
                         class= "form-control form-control-sm" 
-                        min = "1" 
+                        min = "0"
                         (input)="input(numberInput, price.size)" 
                         #numberInput
                     >
-                    <span 
-                        class="oi oi-circle-x" 
-                        aria-hidden="true" 
-                        *ngIf = "numberInput.value" 
-                        (click)="click(numberInput, price.size)"
-                    ></span>
                 </div>
+                <span 
+                    class="oi oi-circle-x" 
+                    aria-hidden="true" 
+                    *ngIf = "numberInput.value"
+                    (click)="click(numberInput, price.size)"
+                ></span>
             </div>
         </div>
     </div>

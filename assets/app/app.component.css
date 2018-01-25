@@ -1,0 +1,11 @@
+.container{
+    height: 100%;
+}
+.header-row{
+    height: 10%;
+}
+.header{
+    background: #ccc; 
+    text-align:center;
+    padding: 10px;
+}

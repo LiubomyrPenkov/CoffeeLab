@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import { ProductsService } from './products.service';
 import { OrderService } from './order.service';
+import { Product } from './product';
 
 @Component({
     selector: 'product-list',
@@ -9,7 +10,7 @@ import { OrderService } from './order.service';
     providers: [OrderService]
 })
 export class ProductList{
-    products: Array<Object>;
+    products: Array<Product>;
 
     constructor(
         private productsServise: ProductsService,
@@ -17,9 +18,10 @@ export class ProductList{
     ){}
 
     ngOnInit(){
-        this.productsServise.getProducts().subscribe(
-            (data)=> this.products = data['data']
-        )
+        this.productsServise.getProducts()
+            .subscribe(
+                data => this.products = data
+            )
     }
     submit(){
         alert("Your order:" + JSON.stringify(this.order.getOrder()));
